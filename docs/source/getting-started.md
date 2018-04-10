@@ -173,11 +173,11 @@ This application should be a great starting point for any GraphQL server, but th
 
 The code from the above examples can be accessed in our [getting started example repository](.) on GitHub, which also includes instructions on how to get started in its [readme](.).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxMDEwMDk1NiwtMjU0NDk1NjAwLC00MD
-E0OTg0ODIsLTY1MTY5NDU5LC02OTM1MTk2NzQsLTE2ODY0NTMx
-NzEsLTMwNjE4OTAzNCwxMDQ0ODgzMzQxLDM2NDc5MTY3NCwtNz
-A0OTQ1ODQ4LC0xMjI3OTAzMjE5LDE1NDc5MTY3MjAsMTUwMDkx
-NDM2OSwxODg3NDYyMjIyLC04ODc3MTkxNTksMTE2OTA0NDU1MS
-wxNjE5MDI3NDQyLDE5OTc5NTU4NzEsMTgyMDI4NDk1OCwtMTk1
-Mjc0NDExXX0=
+eyJoaXN0b3J5IjpbMTczNzc5MjQwNywxNDEwMTAwOTU2LC0yNT
+Q0OTU2MDAsLTQwMTQ5ODQ4MiwtNjUxNjk0NTksLTY5MzUxOTY3
+NCwtMTY4NjQ1MzE3MSwtMzA2MTg5MDM0LDEwNDQ4ODMzNDEsMz
+Y0NzkxNjc0LC03MDQ5NDU4NDgsLTEyMjc5MDMyMTksMTU0Nzkx
+NjcyMCwxNTAwOTE0MzY5LDE4ODc0NjIyMjIsLTg4NzcxOTE1OS
+wxMTY5MDQ0NTUxLDE2MTkwMjc0NDIsMTk5Nzk1NTg3MSwxODIw
+Mjg0OTU4XX0=
 -->
