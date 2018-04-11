@@ -5,18 +5,19 @@ description: All of the things you need with no config needed!
 
 ---
 
+## Overview
 Apollo Server provides an easy way for a brand new application to get up and running quickly by providing an integrated web-server with minimal configuration.
 
 > Running a dedicated GraphQL server is a great choice for many deployments, however, if you're looking to add Apollo Server functionality to an **existing webserver**, follow the [Middleware](./middleware.html) installation instructions instead.
 
-### Prerequisites
+## Prerequisites
 
 * You have designed type definitions. ([Type definitions]())
 * You have _resolvers_ for your type definitions. ([Resolvers]())
 
 If you don't meet or don't understand all of these prerequisites, we recommend you start at the [Getting Started]() page for a more complete example.  Alternatively, visit the links to the right of the prerequisites above to find out more information.
 
-### Installation
+## Installation
 
 There are two packages which must be installed for Apollo Server to function:
 
@@ -68,8 +69,14 @@ server.listen({ port: 3000 });
 
 > If the `port` is omitted, port 3000 will be used.  The [API reference]() explains additional functionality of the `listen` method.
 
+## Next steps
 
+There are a number of configurable options to consider.  Some places to look for additional information are:
+
+* [API documentation]()
+* [Schema directives]()
+* [DEpl
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0MTM0MzcyNCwzODY5NjUyMTgsLTE1Mj
-k0MzgzMDZdfQ==
+eyJoaXN0b3J5IjpbNjQ4MjA3NjU2LDEwNDEzNDM3MjQsMzg2OT
+Y1MjE4LC0xNTI5NDM4MzA2XX0=
 -->
