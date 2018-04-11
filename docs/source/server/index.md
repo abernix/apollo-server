@@ -11,8 +11,8 @@ Apollo Server provides an easy way for a brand new application to get up and run
 
 ### Prerequisites
 
-* You've designed type definitions. ([Type definitions]())
-* You have resolvers for your type definitions. ([Resolvers]())
+* You have designed type definitions. ([Type definitions]())
+* You have _resolvers_ for your type definitions. ([Resolvers]())
 
 If you don't meet or don't understand all of these prerequisites, we recommend you start at the [Getting Started]() page for a more complete example.  Alternatively, visit the links to the right of the prerequisites above to find out more information.
 
@@ -70,5 +70,6 @@ server.listen({ port: 3000 });
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg2OTY1MjE4LC0xNTI5NDM4MzA2XX0=
+eyJoaXN0b3J5IjpbMTA0MTM0MzcyNCwzODY5NjUyMTgsLTE1Mj
+k0MzgzMDZdfQ==
 -->
