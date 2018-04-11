@@ -71,12 +71,12 @@ server.listen({ port: 3000 });
 
 ## Next steps
 
-There are a number of configurable options to consider.  Some places to look for additional information are:
+Once you have a GraphQL server up and running, there are a number of configurable options you might consider.  Some great resources for additional information are:
 
 * [API documentation]()
 * [Schema directives]()
-* [DEpl
+* [Deploying]()
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ4MjA3NjU2LDEwNDEzNDM3MjQsMzg2OT
-Y1MjE4LC0xNTI5NDM4MzA2XX0=
+eyJoaXN0b3J5IjpbMTA5NjI4MjM1NywxMDQxMzQzNzI0LDM4Nj
+k2NTIxOCwtMTUyOTQzODMwNl19
 -->
