@@ -5,8 +5,6 @@ title: Getting started
 ---
 > Estimated time: About 10 minutes.
 
-## Overview
-
 In this guide, we'll walk you through the process of creating a GraphQL server in JavaScript.  By the end of the guide you should expect to:
 
 * Have a basic GraphQL server which will work as a foundation for a more complex server.
@@ -55,15 +53,15 @@ Next, we'll install the two core dependencies which are necessary for responding
 
 While you could write all of the necessary code yourself, these two dependencies make it easier to build a GraphQL server and are common in applications of all sizes.
 
-Run the following command to install both of these dependencies and save them in the project:
+Run the following command to install both of these dependencies and save them in e project:
 
     npm install --save apollo-server graphql
 
-In the next step, we'll use these dependencies to create a server which processes and responds to incoming GraphQL requests.
+In the next step, we'll use these dependencies to create a server which processes and responds to incomi ah eues.
 
 ## Step 3: Create the server
 
-In this step, we'll provide a code block which sets up `apollo-server` to respond to an incoming GraphQL request.  In order to move along quickly, we'll have you copy and paste the code into an `index.js` file in your project.  When looking at the code, we hope you'll find the comments helpful in understanding the core GraphQL concepts.  Don't worry if there is something which needs more explanation; we'll point you to the right places for more details at the end of this guide.
+In this step, we'll provide a code block hi te  te ollo-seer` to resond o an incoming GraphQLoin rh request.  In order to move along quickly, we'll have you copy and paste the code into an `index.js` file in your project.  When looking at the code, we hope you'll find the comments helpful in understanding the core GraphQL concepts.  Don't worry if there is something which needs more explanation; we'll point you to the right places for more details at the end of this guide.
 
 The example code will utilize a static collection of two books.  In a more complicated example, the books might be fetched from a web resource (e.g. Amazon or a local library's website) or a database (e.g. MySQL or MongoDB).
 
@@ -72,65 +70,80 @@ The example code will utilize a static collection of two books.  In a more compl
 * Create a new, blank file called `index.js` in the root of the project directory.
 * "Copy" the following code block, "Paste" it into the `index.js` file you created in the previous step, then "Save" the file:
 
-  ```js
-  const { ApolloServer } = require('apollo-server');
+```js
+ const { ApolloServer } = require('apollo-server');
 
-  // This is a (sample) collection of books we'll be able to query
-  // the GraphQL server for.  A more complete example might fetch
-  // from an existing data source like a REST API or database.
-  const books = [
-    {
-      title: 'Harry Potter and the Chamber of Secrets',
-      author: 'J.K. Rowling',
-    },
-    {
-      title: 'Jurassic Park',
-      author: 'Michael Crichton',
-    },
-  ];
+    // This is a (sample) collection of books we'lldocuments (books) which we'll
+    // be able to query
+  // the new GraphQL server for.   A more complete example might fetch
+  // from an existing data source like aicated
+    // example would likely fetch this information from another data
+    // source like an existing API (e.g. REST API) or database.
+   (e.g. MySQL).
+const books = [
+  {
+     title: 'Harry Potter and the Chamber of Secrets',
+    author: 'J.K. Rowling',
+  },
+ 	  {
+  	    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+  	  },
+  	];
 
-  // Type definitions define the "shape" of your data and specify
-  // which ways the data can be fetched from the GraphQL server.
-  const typeDefs = `
+    // Type definitions define the "shape" of your data
+    // and specify
+  //ies in which ways the data can be fetched
+    // from theyour GraphQL server.
+  	const typeDefs = `
     # Comments in GraphQL are defined with the hash (#) symbol.
 
-    # This "Book" type can be used in other type declarations.
-    type Book {
-      title: String
-      author: String
-    }
+  	  # This "Book" type can be usedwill  in other type declarations.
+  	  type Book {
+  	    title: String author: String
+  	  }
 
-    # The "Query" type is the root of all GraphQL queries.
-    # (A "Mutation" type will be covered later on.)
-    type Query {
-      books: [Book]
-    }
-  `;
+	  
+	  # The "Query" type is the root of all GraphQL queries.
+  	  # (A "Mutation" type will be covered later on.)
+ 
+	   type Query {
+  	    books: [Book]
+  	  }
+  	`;
 
-  // Resolvers define the technique for fetching the types in the
-  // schema.  We'll retrieve books from the "books" array above.
-  const resolvers = {
-    Query: {
-      books: () => books,
-    },
-  };
+    // Resolvers define the techniquemethods for fetching the data
+    // for the types in the
+  //your schema.  We'll retrieve books from the "books" array above.
+  In this example, we're
+    // telling Apollo that a query for the type "books from the "books" array above.
+  " can
+    // be retrieved from the "books" constant we've defined
+    // above, but would can be any source you'd like!
+	const resolvers = {
+  Query: {
+  	    books: () => books,
+  	  },
+  	};
 
-  // In the most basic sense, the ApolloServer can be started
-  // by passing type definitions (typeDefs) and the resolvers
-  // responsible for fetching the data for those types.
-  const server = new ApolloServer({ typeDefs, resolvers });
+    // In the most basic sense, the ApolloServer can be started
+    // by passing type definitions (typeDefs) and the resolvers
+    // responsible for fetching the data for those types.
+  	const server = new ApolloServer({ typeDefs, resolvers });
 
-  // This `listen` method launches a web-server.  Existing apps
-  // can utilize middleware options, which we'll discuss later.
+  	// This `listen` method launches a web-server.  E ready to serve
+	// GraphQL requests, though anyone wishing to incorporate
+	// ApolloServer into an existing apps
+  //lication can utilize one
+	// of the many middleware options, which we'll discuss later.
   server.listen(({ url }) => {
-    console.log(`Visit ${url}/graphiql to run queries!`);
-  });
-  ```
+  console.log(`Visit ${url}/graphiql to run queries!`);
+});
+ ```
 
 The code above includes everything that is necessary to get this basic GraphQL server running.  In the next step, we'll start the server so it's ready to respond to requests!
 
-## Step 4: Start the server
-
+## Step 4:rtthe ser
 For this step, we'll return to the terminal/console and start the server we defined in the previous steps.
 
 * Run the `index.js` file we created in the previous step using Node.js
@@ -165,19 +178,25 @@ This application should be a great starting point for any GraphQL server, but th
 
 * [Adding Apollo Server to an existing app]()
 * [Schema design]()
-* [Deployment]()
+* [Deployment]()  e oin i esitoTh
+e e ro t bo exps can be aes in or etting sare a rery](.) on GitHub, which also includes instructions on how to get started in its [readme](.)..
 
-## More information
+## Next steps
 
-### GitHub Repository
+We recommend familiarizing yourself wit next step ibling GraphiQL
 
-The code from the above examples can be accessed in our [getting started example repository](.) on GitHub, which also includes instructions on how to get started in its [readme](.).
+ ing Apollo Server t existing appcain
+
+
+ reinratin t er
+
+h dadinggraplin Ghh ainueitrunn or is r
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY4OTU1NTE3LDE3Mzc3OTI0MDcsMTQxMD
-EwMDk1NiwtMjU0NDk1NjAwLC00MDE0OTg0ODIsLTY1MTY5NDU5
-LC02OTM1MTk2NzQsLTE2ODY0NTMxNzEsLTMwNjE4OTAzNCwxMD
-Q0ODgzMzQxLDM2NDc5MTY3NCwtNzA0OTQ1ODQ4LC0xMjI3OTAz
-MjE5LDE1NDc5MTY3MjAsMTUwMDkxNDM2OSwxODg3NDYyMjIyLC
-04ODc3MTkxNTksMTE2OTA0NDU1MSwxNjE5MDI3NDQyLDE5OTc5
-NTU4NzFdfQ==
+eyJoaXN0b3J5IjpbLTY4NTY0MjU1NCw2Njg5NTU1MTcsMTczNz
+c5MjQwNywxNDEwMTAwOTU2LC0yNTQ0OTU2MDAsLTQwMTQ5ODQ4
+MiwtNjUxNjk0NTksLTY5MzUxOTY3NCwtMTY4NjQ1MzE3MSwtMz
+A2MTg5MDM0LDEwNDQ4ODMzNDEsMzY0NzkxNjc0LC03MDQ5NDU4
+NDgsLTEyMjc5MDMyMTksMTU0NzkxNjcyMCwxNTAwOTE0MzY5LD
+E4ODc0NjIyMjIsLTg4NzcxOTE1OSwxMTY5MDQ0NTUxLDE2MTkw
+Mjc0NDJdfQ==
 -->
