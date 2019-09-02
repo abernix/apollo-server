@@ -185,7 +185,7 @@ jobs:
       - run:
           command: |
             mkdir -p ~/.config/verdaccio/
-            cat \<<EOM > ~/.config/verdaccio/config.yaml
+            cat \<<'EOF' > ~/.config/verdaccio/config.yaml
             storage: ./storage
             uplinks: # None
             publish:
@@ -196,7 +196,7 @@ jobs:
                 publish: $all
             logs:
               - {type: stdout, format: pretty, level: http}
-            EOM
+            EOF
       - run:
           name: Verdaccio
           command: npx verdaccio
