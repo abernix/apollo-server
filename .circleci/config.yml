@@ -179,6 +179,7 @@ jobs:
   Dry Publish:
     executor: node
     steps:
+      - checkout
       - attach_workspace:
           at: .
       - run: npm install --no-save verdaccio
