@@ -256,5 +256,3 @@ workflows:
           filters:
             tags:
               only: '^.*?@[0-9a-z.-]+$'
-            branches:
-              ignore: /.*/
