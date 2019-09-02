@@ -181,6 +181,30 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run: npm install -g verdaccio
+      - run:
+          command: |
+            mkdir -p ~/.config/verdaccio/
+            cat \<\<EOM > ~/.config/verdaccio/config.yaml
+            storage: ./storage
+            uplinks: # None
+            publish:
+              allow_offline: false
+            packages:
+              '**':
+                access: $all
+                publish: $all
+            logs:
+              - {type: stdout, format: pretty, level: http}
+            EOM
+      - run: ls -l ~/.config/verdaccio/
+      - run: cat ~/.config/verdaccio/config.yaml
+
+  Publish:
+    executor: node
+    steps:
+      - attach_workspace:
+          at: .
       - run: npx lerna changed --include-merged-tags
 
 # XXX We used to use this filter to only run a "Docs" job on docs branches.
@@ -210,3 +234,11 @@ workflows:
             - NodeJS 8
             - NodeJS 10
             - NodeJS 12
+      - Publish:
+          requires:
+            - Dry Publish
+          filters:
+            tags:
+              only: '^.*?@[0-9a-z.-]+$'
+            branches:
+              ignore: /.*/
