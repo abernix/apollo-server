@@ -181,7 +181,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: npm install -g verdaccio
+      - run: npm install --no-save verdaccio
       - run:
           command: |
             mkdir -p ~/.config/verdaccio/
