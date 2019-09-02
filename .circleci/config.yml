@@ -203,9 +203,6 @@ jobs:
           command: npx verdaccio
           background: true
       - run:
-          name: Set npm registry to (local) Verdaccio
-          command: npm config set registry http://localhost:4873/
-      - run:
           name: Lerna Publish to (local) Verdaccio
           command: |
             npx lerna publish \
