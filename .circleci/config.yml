@@ -197,8 +197,12 @@ jobs:
             logs:
               - {type: stdout, format: pretty, level: http}
             EOM
-      - run: ls -l ~/.config/verdaccio/
-      - run: cat ~/.config/verdaccio/config.yaml
+      - run:
+          name: Verdaccio
+          command: npx verdaccio
+          background: true
+      - run: npm config set registry http://localhost:4873/
+      - run: npm view apollo-server-express
 
   Publish:
     executor: node
