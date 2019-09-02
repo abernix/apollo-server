@@ -254,5 +254,7 @@ workflows:
           requires:
             - Dry Publish
           filters:
+            branches:
+              ignore: /.*/
             tags:
-              only: '^.*?@[0-9a-z.-]+$'
+              only: /^.*?@[0-9a-z.-]+$/
