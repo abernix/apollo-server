@@ -5,6 +5,10 @@
   "files": [],
   "include": [],
   "references": [
+    // Benchmarks
+    { "path": "./benchmarks/tsconfig.json" },
+
+    // Every other package below here.
     { "path": "./packages/apollo-cache-control" },
     { "path": "./packages/apollo-datasource" },
     { "path": "./packages/apollo-datasource-rest" },
