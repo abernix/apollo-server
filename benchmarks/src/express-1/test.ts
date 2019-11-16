@@ -46,7 +46,7 @@ function transmitToSeries(name: string, value: number) {
     !SERIESCI_TOKEN ||
     !CIRCLE_SHA1
   ) {
-    console.info('Missing parameters required to transmit to SeriesCI.');
+    console.info(`Missing env vars required to transmit ${name} to SeriesCI.`);
     return;
   }
 
