@@ -5,9 +5,9 @@ import { request as httpsRequest } from 'https';
 async function main () {
   const result = await autocannon({
     url: 'http://localhost:4000/graphql',
-    connections: 60, //default
-    pipelining: 1, // default
-    duration: 2, // default
+    connections: 30,
+    pipelining: 1,
+    duration: 60,
     method: 'POST',
     headers: {
       'content-type': 'application/json',
