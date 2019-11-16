@@ -19,6 +19,11 @@ async function main () {
   });
   console.log(result);
   transmitToSeries('test-a', 0.5);
+  transmitToSeries('non-two-hundred', result.non2xx);
+  transmitToSeries('requests-average', result.requests.average);
+  transmitToSeries('requests-p-fifty', result.requests.p50);
+  transmitToSeries('requests-p-ninety', result.requests.p90);
+  transmitToSeries('requests-p-ninety-nine', result.requests.p99);
 }
 
 main();
