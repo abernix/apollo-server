@@ -28,6 +28,7 @@ commands:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
+      - run: npm run benchmark
 
 # Important! When adding a new job to `jobs`, make sure to define when it
 # executes by also adding it to the `workflows` section below!

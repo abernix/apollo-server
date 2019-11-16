@@ -18,6 +18,7 @@
     "test:watch": "jest --verbose --watchAll",
     "testonly": "npm test",
     "test:ci": "npm run coverage -- --ci --maxWorkers=2  --reporters=default --reporters=jest-junit",
+    "benchmark": "npm run compile && NO_INSIGHT=true npx clinic doctor --on-port 'node benchmarks/dist/express-1/test.js' -- node benchmarks/dist/express-1",
     "coverage": "npm test -- --coverage",
     "coverage:upload": "codecov"
   },
